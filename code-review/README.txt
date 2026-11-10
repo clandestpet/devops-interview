@@ -1,4 +1,4 @@
-Code review exercise. No installs needed.
+## Code review exercise. No installs needed.
 
 Three files are about to be merged and shipped: main.tf and lambda.tf (one
 OpenTofu/Terraform config) and deploy.yml (the CI pipeline). Review them as you
