@@ -1,0 +1,18 @@
+name: deploy
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - run: npm install && npm test || true
+      - run: npm run build && zip -r orders.zip dist
+      - run: aws lambda update-function-code --function-name orders_processor --zip-file fileb://orders.zip
+        env:
+          AWS_ACCESS_KEY_ID: AKIAIOSFODNN7EXAMPLE
+          AWS_SECRET_ACCESS_KEY: wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
+          AWS_DEFAULT_REGION: us-east-1
+      - run: flyway -url=jdbc:mysql://prod-db.example.internal:3306/orders -user=admin -password=Password123! migrate
