@@ -8,7 +8,8 @@ This is a 30 minute session. You do not need to install, run or deploy anything.
 2. **Start with a chat.** We will ask a couple of questions about your past work.
 3. **Open `deploy.yml`.** It is the pipeline for our orders service, and it is about to be merged. Tell us what is risky about it and why. About 5 minutes.
 4. **Make it safer.** Tell us, or sketch in the file, how you would add tests, staged deploys and rollback. About 5 minutes.
-5. **Ask us anything.** The last few minutes are yours.
+5. **If we have time, open `troubleshooting/`.** Read its `README.md`, then talk us through what is wrong and how you would fix it.
+6. **Ask us anything.** The last few minutes are yours.
 
 ## Context
 

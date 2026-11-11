@@ -1,0 +1,11 @@
+orders-api (staging)
+ERROR failed to enqueue order
+AccessDenied: User: arn:aws:sts::123456789012:assumed-role/orders-api/i-0a1b2c3d
+is not authorized to perform: sqs:sendmessage on resource:
+arn:aws:sqs:us-east-1:123456789012:orders-queue because no identity-based
+policy allows the sqs:sendmessage action
+
+orders_processor event source mapping (staging)
+State: Enabled
+LastProcessingResult: PROBLEM: Function execution role does not have
+permissions to call ReceiveMessage on SQS
