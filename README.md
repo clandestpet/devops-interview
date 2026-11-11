@@ -4,18 +4,21 @@ This is a 30 minute session. You do not need to install, run or deploy anything.
 
 ## Walkthrough
 
-1. **Get ready.** Share your screen and open this repo in a text editor you are comfortable in.
+1. **Get ready.** Share your screen and open this folder in a text editor you are comfortable in.
 2. **Start with a chat.** We will ask a couple of questions about your past work.
-3. **Open `code-review/`.** Read its `README.txt`. Review `main.tf`, `lambda.tf` and `deploy.yml` as you would a teammate's pull request. For each problem, say what it is, why it matters and how
-you would fix it. About 8 minutes.
-4. **Say what you would block on.** Tell us which issues stop the merge and which can wait.
-5. **Open `troubleshooting/`.** Read its `README.txt`, then look at `errors.txt`, `queue.tf` and `roles.tf`. Talk us through what is wrong, what you check first and how you would fix it. About 6
-minutes.
-6. **Ask us anything.** The last few minutes are yours.
+3. **Open `deploy.yml`.** It is the pipeline for our orders service, and it is about to be merged. Tell us what is risky about it and why. About 5 minutes.
+4. **Make it safer.** Tell us, or sketch in the file, how you would add tests, staged deploys and rollback. About 5 minutes.
+5. **Ask us anything.** The last few minutes are yours.
+
+## Context
+
+- The pipeline deploys `orders_processor`, a Lambda that takes orders from a queue, writes them to a MySQL database and calls a payment API.
+- The same pipeline runs the database migrations (Flyway).
+- Every engineer and contractor can read this repo.
+- Recently, a release went out with failing tests and we rolled it back by hand at night. Another release failed because the code needed a database column that was not there yet.
 
 ## Tips
 
-- Start with whichever file you like.
 - Explain your reasoning, not just the answer.
 - Ask questions if something is unclear.
 - You will not be expected to find everything. Prioritizing matters more than a long list.
