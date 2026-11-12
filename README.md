@@ -13,6 +13,7 @@ This is a 30 minute session. You do not need to install, run or deploy anything.
 
 ## Context
 
+- Merging to `main` deploys straight to production.
 - The pipeline deploys `orders_processor`, a Lambda that takes orders from a queue, writes them to a MySQL database and calls a payment API.
 - The same pipeline runs the database migrations (Flyway).
 - Every engineer and contractor can read this repo.
